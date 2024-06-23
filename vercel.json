@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/dist/main.js"
+    }
+  ],
+  "build": {
+    "env": {
+      "NPM_CONFIG_PRODUCTION": "false"
+    }
+  },
+  "scripts": {
+    "start": "npx nest start"
+  }
+}
